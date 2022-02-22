@@ -1,6 +1,6 @@
 
 import { Component } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient, HttpHeaders} from '@angular/common/http'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,7 +12,7 @@ export class AppComponent {
   onSubmit(data:any)
   {
 
-  this.http.post('http://localhost:8000/api/login',data)
+  this.http.post('http://127.0.0.1:8000/api/products',data,{ headers: new HttpHeaders().append('Authorization','Bearer 2|B49pDunIMInHwg86zX8xqFnPIu41Q6QvX8Nz1xzL')})
     .subscribe((result)=>{
       console.warn("result",result)
     })
